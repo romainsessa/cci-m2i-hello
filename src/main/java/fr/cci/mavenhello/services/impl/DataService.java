@@ -38,8 +38,17 @@ public class DataService implements IDataService {
 		}
 		return null;
 	}
+	
+	@Override
+	public boolean deleteById(int id) {
+		int result = this.dataRepository.deleteById(id);
+		if(result == 1) {
+			return true;
+		}		
+		return false;
+	}
 
-	private DataModel toModel(DataEntity dataEntity) {
+	public DataModel toModel(DataEntity dataEntity) {
 		DataModel dataModel = new DataModel();
 		dataModel.setId(dataEntity.getId());
 		dataModel.setLabel(dataEntity.getLabel());
@@ -52,5 +61,7 @@ public class DataService implements IDataService {
 		dataEntity.setLabel(dataModel.getLabel());
 		return dataEntity;
 	}
+
+	
 
 }

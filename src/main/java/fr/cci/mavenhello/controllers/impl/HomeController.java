@@ -70,7 +70,7 @@ public class HomeController implements Initializable {
 		label.setText(dataModels.size() + " label(s) en BDD");
 	}
 	
-	private void updateVBoxLabel(DataModel dataModel) {
+	private void updateVBoxLabel(DataModel dataModel) {		
 		labels.getChildren().add(
 				new Label(dataModel.toString())
 				);

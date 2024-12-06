@@ -11,5 +11,7 @@ public interface IDataRepository {
 	public List<DataEntity> findAll();
 	
 	public DataEntity upSert(DataEntity dataEntity);
+	
+	public int deleteById(int id);
 
 }

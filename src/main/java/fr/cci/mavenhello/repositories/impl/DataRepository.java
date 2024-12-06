@@ -79,4 +79,20 @@ public class DataRepository implements IDataRepository {
 		}
 		return null;
 	}
+
+	@Override
+	public int deleteById(int id) {
+		String query = "";
+		try {
+			query = "DELETE FROM data WHERE id=?";
+			PreparedStatement stat = connection.prepareStatement(query);
+			stat.setInt(1, id);
+			int res = stat.executeUpdate();
+			return res;
+		} catch (SQLException e) {
+			System.out.println("Erreur SQL pour " + query);
+			System.out.println(e.getMessage());
+			return 0;
+		}
+	}
 }

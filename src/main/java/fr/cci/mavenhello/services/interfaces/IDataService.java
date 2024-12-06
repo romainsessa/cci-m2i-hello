@@ -11,5 +11,7 @@ public interface IDataService {
 	public List<DataModel> getAll();
 	
 	public DataModel save(DataModel model);
+	
+	public boolean deleteById(int id);
 
 }
