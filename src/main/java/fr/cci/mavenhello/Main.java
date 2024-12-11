@@ -9,6 +9,7 @@ import fr.cci.mavenhello.repositories.impl.DataRepository;
 import fr.cci.mavenhello.repositories.interfaces.IDataRepository;
 import fr.cci.mavenhello.services.impl.DataService;
 import fr.cci.mavenhello.services.interfaces.IDataService;
+import fr.cci.mavenhello.websocket.WebSocketService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -58,6 +59,12 @@ public class Main extends Application {
 		primaryStage.setHeight(300);
 		primaryStage.show();
 		primaryStage.centerOnScreen();
+	}
+	
+	@Override
+	public void stop() throws Exception {
+		WebSocketService.getInsance().close();
+		super.stop();
 	}
 
 }

@@ -22,6 +22,10 @@
 				<TextField fx:id="field" />
 				<Button onAction="#handleSave" text="Add" />
 			</children>
-		</HBox>		
+		</HBox>
+		<Label id="label" text="Ecoute du webSocket"/>
+		<VBox fx:id="messages">
+			<children></children>
+		</VBox>
 	</children>	
 </VBox>
