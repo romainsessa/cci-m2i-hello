@@ -93,11 +93,7 @@ public class HomeController implements Initializable, IMessageListener {
 
 	private void updateVBoxLabels() {
 		dataModels.forEach(dataModel -> updateVBoxLabel(dataModel));
-	}
-
-	private void updateVBoxMessage(OutputMessage message) {
-		messages.getChildren().add(new Label(message.toString()));
-	}
+	}	
 
 	@Override
 	public void handle(OutputMessage message) {
@@ -107,5 +103,9 @@ public class HomeController implements Initializable, IMessageListener {
 		Platform.runLater(() -> {
 			updateVBoxMessage(message);
 		});
+	}
+	
+	private void updateVBoxMessage(OutputMessage message) {
+		messages.getChildren().add(new Label(message.toString()));
 	}
 }

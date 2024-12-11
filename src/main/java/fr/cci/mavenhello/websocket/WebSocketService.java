@@ -31,8 +31,6 @@ public class WebSocketService  {
 		
 		stompSessionHandler = new MessageStompSessionHandler();
 		webSocketStompClient.connectAsync(URL, stompSessionHandler);
-		
-		webSocketStompClient.stop();
 	}
 	
 	public void subscribe(String path) {
